@@ -1,0 +1,416 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport"
+content="width=device-width, initial-scale=1.0">
+
+<title>Congratulations</title>
+
+<link rel="stylesheet"
+href="style.css">
+
+</head>
+
+<body class="result-body">
+
+<!-- LOGIN CHECK -->
+
+<script>
+
+if(
+!localStorage.getItem(
+"currentUser"
+)
+){
+
+window.location.href =
+"index.html";
+}
+
+</script>
+
+<!-- LOGOUT -->
+
+<button class="logout-btn"
+onclick="logout()">
+
+🚪 Logout
+
+</button>
+
+<!-- CONFETTI -->
+
+<div class="confetti-container">
+
+<div class="confetti"></div>
+<div class="confetti"></div>
+<div class="confetti"></div>
+<div class="confetti"></div>
+<div class="confetti"></div>
+<div class="confetti"></div>
+<div class="confetti"></div>
+<div class="confetti"></div>
+
+</div>
+
+<!-- MAIN -->
+
+<div class="result-container">
+
+<h1>
+🎉 Congratulations!
+</h1>
+
+<h2 id="levelTitle">
+
+You completed Bubble Sort!
+
+</h2>
+
+<div class="result-card">
+
+<h2 id="finalStars">
+⭐⭐⭐
+</h2>
+
+<h2 id="finalAccuracy">
+Accuracy: 100%
+</h2>
+
+<p id="finalMessage">
+
+</p>
+
+<h3 id="unlockMessage">
+
+</h3>
+
+</div>
+
+<!-- BUTTONS -->
+
+<div class="result-buttons">
+
+<button onclick="playAgain()">
+
+🔁 Play Again
+
+</button>
+
+<button onclick="nextLevel()">
+
+▶ Next Level
+
+</button>
+
+</div>
+
+</div>
+
+<script>
+
+/* DATA */
+
+let accuracy =
+parseInt(
+localStorage.getItem(
+"accuracy"
+));
+
+let stars =
+localStorage.getItem(
+"stars"
+);
+
+let currentLevel =
+localStorage.getItem(
+"completedLevel"
+);
+
+let currentUser =
+localStorage.getItem(
+"currentUser"
+);
+
+let users =
+JSON.parse(
+localStorage.getItem(
+"users"
+));
+
+let player =
+users[currentUser];
+
+/* SHOW LEVEL */
+
+document.getElementById(
+"levelTitle"
+).innerHTML =
+
+"🎉 You completed " +
+currentLevel +
+"!";
+
+/* SHOW STARS */
+
+document.getElementById(
+"finalStars"
+).innerHTML =
+stars;
+
+/* SHOW ACCURACY */
+
+document.getElementById(
+"finalAccuracy"
+).innerHTML =
+
+"Accuracy: " +
+accuracy +
+"%";
+
+/* MESSAGE */
+
+let message = "";
+
+if(accuracy >= 90){
+
+message =
+"Excellent work! You mastered " +
+currentLevel +
+"!";
+}
+
+else if(accuracy >= 70){
+
+message =
+"Great job! Keep practicing!";
+}
+
+else{
+
+message =
+"Practice more to improve!";
+}
+
+document.getElementById(
+"finalMessage"
+).innerHTML =
+message;
+
+/* NEXT LEVEL */
+
+let nextLevelName = "";
+
+let nextLevelFile = "";
+
+/* FLOW */
+
+if(
+currentLevel ===
+"Bubble Sort"
+){
+
+nextLevelName =
+"Selection Sort";
+
+nextLevelFile =
+"selection-tutorial.html";
+}
+
+else if(
+currentLevel ===
+"Selection Sort"
+){
+
+nextLevelName =
+"Insertion Sort";
+
+nextLevelFile =
+"insertion-tutorial.html";
+}
+
+else if(
+currentLevel ===
+"Insertion Sort"
+){
+
+nextLevelName =
+"Merge Sort";
+
+nextLevelFile =
+"merge-tutorial.html";
+}
+
+else if(
+currentLevel ===
+"Merge Sort"
+){
+
+nextLevelName =
+"Quick Sort";
+
+nextLevelFile =
+"quicksort.html";
+}
+
+/* UNLOCK */
+
+if(
+accuracy === 100
+&& nextLevelName !== ""
+){
+
+if(
+!player.unlockedLevels
+){
+
+player.unlockedLevels = [];
+}
+
+if(
+!player.unlockedLevels.includes(
+nextLevelName
+)
+){
+
+player.unlockedLevels.push(
+nextLevelName
+);
+}
+
+player.currentLevel =
+nextLevelName;
+
+if(
+accuracy >
+player.bestAccuracy
+){
+
+player.bestAccuracy =
+accuracy;
+}
+
+/* SAVE */
+
+users[currentUser] =
+player;
+
+localStorage.setItem(
+"users",
+JSON.stringify(users)
+);
+
+/* SHOW */
+
+document.getElementById(
+"unlockMessage"
+).innerHTML =
+
+"🔓 " +
+nextLevelName +
+" Unlocked!";
+}
+
+else{
+
+document.getElementById(
+"unlockMessage"
+).innerHTML =
+
+"⚠ Get 100% to unlock " +
+nextLevelName;
+}
+
+/* PLAY AGAIN */
+
+function playAgain(){
+    
+
+if(
+currentLevel ===
+"Bubble Sort"
+){
+
+window.location.href =
+"game.html";
+}
+
+else if(
+currentLevel ===
+"Selection Sort"
+){
+
+window.location.href =
+"selection.html";
+}
+
+else if(
+currentLevel ===
+"Insertion Sort"
+){
+
+window.location.href =
+"insertion.html";
+}
+
+else if(
+currentLevel ===
+"Merge Sort"
+){
+
+
+window.location.href =
+"merge.html";
+}
+else if(
+currentLevel ===
+"Quick Sort"
+){
+
+window.location.href =
+"quicksort.html";
+}
+}
+
+/* NEXT LEVEL */
+
+function nextLevel(){
+
+if(
+player.unlockedLevels.includes(
+nextLevelName
+)
+){
+
+window.location.href =
+nextLevelFile;
+}
+
+else{
+
+alert(
+"🔒 Get 100% accuracy first!"
+);
+}
+}
+
+/* LOGOUT */
+
+function logout(){
+
+localStorage.removeItem(
+"currentUser"
+);
+
+window.location.href =
+"index.html";
+}
+
+</script>
+
+</body>
+</html>

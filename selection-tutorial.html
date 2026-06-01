@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport"
+content="width=device-width, initial-scale=1.0">
+
+<title>Selection Sort Tutorial</title>
+
+<link rel="stylesheet"
+href="selection-tutorial.css">
+
+</head>
+
+<body>
+    <button class="logout-btn"
+onclick="logout()">
+
+🚪 Logout
+
+</button>
+
+<!-- BACKGROUND -->
+
+<div class="scanner-bg">
+
+<div class="scan-line"></div>
+
+</div>
+
+<!-- MAIN -->
+
+<div class="tutorial-container">
+
+<h1>
+🔍 Selection Sort Tutorial
+</h1>
+
+<p class="intro">
+
+Selection Sort works by:
+<br><br>
+
+✅ Finding the minimum value
+<br>
+
+✅ Swapping it to the correct position
+<br>
+
+✅ Repeating for remaining elements
+
+</p>
+
+<!-- EXAMPLE -->
+
+<div class="example-section">
+
+<h2>
+Example
+</h2>
+
+<div class="array-demo">
+
+<div class="demo-bar">
+
+<span class="label i-label">
+i
+</span>
+
+50
+
+</div>
+
+<div class="demo-bar">
+
+20
+
+</div>
+
+<div class="demo-bar">
+
+80
+
+</div>
+
+<div class="demo-bar minimum">
+
+<span class="label min-label">
+min
+</span>
+
+10
+
+</div>
+
+</div>
+
+<p class="explanation">
+
+🔍 Find the minimum value:
+<b>10</b>
+
+<br><br>
+
+🔁 Swap it with:
+<b>50</b>
+
+</p>
+
+</div>
+
+<!-- AFTER SWAP -->
+
+<div class="example-section">
+
+<h2>
+After Swap
+</h2>
+
+<div class="array-demo">
+
+<div class="demo-bar correct">
+
+10
+
+</div>
+
+<div class="demo-bar">
+
+20
+
+</div>
+
+<div class="demo-bar">
+
+80
+
+</div>
+
+<div class="demo-bar">
+
+50
+
+</div>
+
+</div>
+
+<p class="explanation">
+
+✅ First position sorted!
+
+</p>
+
+</div>
+
+<!-- RULES -->
+
+<div class="rules">
+
+<h2>
+🎮 Gameplay Rules
+</h2>
+
+<p>
+
+✅ Click the minimum value
+<br><br>
+
+❌ Wrong clicks reduce accuracy
+<br><br>
+
+🏆 Get 100% to unlock next level
+
+</p>
+
+</div>
+
+<!-- BUTTON -->
+
+<button onclick="startSelectionGame()">
+
+▶ Start Selection Sort
+
+</button>
+
+</div>
+
+<script>
+
+function startSelectionGame(){
+
+window.location.href =
+"selection.html";
+}
+
+</script>
+
+</body>
+</html>

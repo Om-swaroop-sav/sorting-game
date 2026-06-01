@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport"
+content="width=device-width, initial-scale=1.0">
+
+<title>Insertion Sort Tutorial</title>
+
+<link rel="stylesheet"
+href="insertion-tutorial.css">
+
+</head>
+
+<body>
+
+<!-- LOGOUT -->
+
+<button class="logout-btn"
+onclick="logout()">
+
+🚪 Logout
+
+</button>
+
+<div class="tutorial-container">
+
+<h1>
+🟪 Insertion Sort Tutorial
+</h1>
+
+<div class="tutorial-card">
+
+<h2>
+How Insertion Sort Works
+</h2>
+
+<p>
+
+Insertion Sort takes one value
+at a time and inserts it into
+the correct sorted position.
+
+</p>
+
+<p>
+
+The left side becomes sorted
+step by step.
+
+</p>
+
+</div>
+
+<!-- EXAMPLE -->
+
+<div class="example-box">
+
+<div class="example-bar correct"
+style="height:90px;">
+
+10
+
+</div>
+
+<div class="example-bar correct"
+style="height:140px;">
+
+20
+
+</div>
+
+<div class="example-bar correct"
+style="height:220px;">
+
+50
+
+</div>
+
+<div class="example-bar active"
+style="height:170px;">
+
+30
+
+</div>
+
+</div>
+
+<div class="instruction">
+
+30 should be inserted
+before 50.
+
+</div>
+
+<!-- BUTTONS -->
+
+<div class="buttons">
+
+<a href="insertion.html">
+
+<button class="start-btn">
+
+▶ START LEVEL
+
+</button>
+
+</a>
+
+<a href="levels.html">
+
+<button class="back-btn">
+
+⬅ BACK
+
+</button>
+
+</a>
+
+</div>
+
+</div>
+
+<script>
+
+/* LOGIN CHECK */
+
+if(
+!localStorage.getItem(
+"currentUser"
+)
+){
+
+window.location.href =
+"index.html";
+}
+
+/* LOGOUT */
+
+function logout(){
+
+localStorage.removeItem(
+"currentUser"
+);
+
+window.location.href =
+"index.html";
+}
+
+</script>
+
+</body>
+</html>

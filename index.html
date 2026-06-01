@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport"
+content="width=device-width, initial-scale=1.0">
+
+<title>Login</title>
+
+<link rel="stylesheet" href="login.css">
+
+</head>
+
+<body>
+
+<div class="login-container">
+
+<h1>
+🧠 SORT QUEST
+</h1>
+
+<p>
+Enter your player name
+</p>
+
+<input
+type="text"
+id="username"
+placeholder="Player Name">
+
+<br>
+
+<button onclick="login()">
+
+▶ START GAME
+
+</button>
+
+</div>
+
+<script>
+
+function login(){
+
+let username =
+document.getElementById("username")
+.value.trim();
+
+if(username === ""){
+
+alert("Enter player name");
+
+return;
+}
+
+/* GET EXISTING USERS */
+
+let users =
+JSON.parse(
+localStorage.getItem("users")
+) || {};
+
+/* CREATE USER IF NEW */
+
+if(!users[username]){
+
+users[username] = {
+
+currentLevel:"Bubble Sort",
+
+unlockedLevels:[
+"Bubble Sort"
+],
+
+bestAccuracy:0,
+
+stars:0
+};
+
+}
+
+/* SAVE USERS */
+
+localStorage.setItem(
+"users",
+JSON.stringify(users)
+);
+
+/* SAVE CURRENT USER */
+
+localStorage.setItem(
+"currentUser",
+username
+);
+
+/* OPEN HOME */
+
+window.location.href =
+"home.html";
+}
+
+</script>
+
+</body>
+</html>

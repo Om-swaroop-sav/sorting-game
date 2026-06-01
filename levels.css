@@ -1,0 +1,229 @@
+body{
+
+margin:0;
+padding:0;
+
+font-family:Arial;
+
+background:#0f172a;
+
+color:white;
+
+text-align:center;
+
+overflow-x:hidden;
+
+min-height:100vh;
+}
+
+/* BACKGROUND */
+
+.background{
+
+position:fixed;
+
+top:0;
+left:0;
+
+width:100%;
+height:100%;
+
+z-index:-1;
+
+background:
+linear-gradient(
+135deg,
+#0f172a,
+#1e293b,
+#020617
+);
+}
+
+/* TITLE */
+
+.title{
+
+margin-top:80px;
+
+font-size:42px;
+
+color:#facc15;
+}
+
+/* CONTAINER */
+
+.levels-container{
+
+width:90%;
+
+max-width:1200px;
+
+margin:40px auto;
+
+display:grid;
+
+grid-template-columns:
+repeat(auto-fit,minmax(250px,1fr));
+
+gap:25px;
+}
+
+/* CARDS */
+
+.level-card{
+
+background:#1e293b;
+
+padding:30px 20px;
+
+border-radius:16px;
+
+cursor:pointer;
+
+transition:0.3s;
+
+box-shadow:
+0 0 15px rgba(0,0,0,0.3);
+}
+
+/* HOVER */
+
+.level-card:hover{
+
+transform:translateY(-8px);
+}
+
+/* TITLE */
+
+.level-card h2{
+
+font-size:28px;
+
+margin-bottom:15px;
+}
+
+/* TEXT */
+
+.level-card p{
+
+font-size:18px;
+
+line-height:1.6;
+}
+
+/* LOCKED */
+
+.locked{
+
+opacity:0.6;
+
+cursor:not-allowed;
+
+background:#334155;
+}
+
+/* UNLOCKED */
+
+.unlocked{
+
+border:
+2px solid #facc15;
+}
+
+/* PROFILE BUTTON */
+
+.profile-btn{
+
+position:absolute;
+
+top:20px;
+left:20px;
+
+padding:12px 22px;
+
+background:#38bdf8;
+
+color:white;
+
+border:none;
+
+border-radius:10px;
+
+font-size:16px;
+
+font-weight:bold;
+
+cursor:pointer;
+
+transition:0.3s;
+
+z-index:1000;
+}
+
+.profile-btn:hover{
+
+transform:scale(1.05);
+}
+
+/* LOGOUT BUTTON */
+
+.logout-btn{
+
+position:absolute;
+
+top:20px;
+right:20px;
+
+padding:12px 22px;
+
+background:#ef4444;
+
+color:white;
+
+border:none;
+
+border-radius:10px;
+
+font-size:16px;
+
+font-weight:bold;
+
+cursor:pointer;
+
+transition:0.3s;
+
+z-index:1000;
+}
+
+.logout-btn:hover{
+
+transform:scale(1.05);
+}
+
+/* MOBILE */
+
+@media(max-width:768px){
+
+.title{
+
+font-size:30px;
+}
+
+.level-card h2{
+
+font-size:22px;
+}
+
+.level-card p{
+
+font-size:16px;
+}
+
+.profile-btn,
+.logout-btn{
+
+font-size:14px;
+
+padding:10px 16px;
+}
+}

@@ -1,0 +1,197 @@
+body{
+
+    margin:0;
+
+    padding:0;
+
+    overflow:hidden;
+
+    height:100vh;
+
+    font-family:Arial;
+
+    background:#020617;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    position:relative;
+}
+
+/* MAIN BACKGROUND */
+
+.animated-bg{
+
+    position:absolute;
+
+    width:100%;
+
+    height:100%;
+
+    overflow:hidden;
+}
+
+/* GRID EFFECT */
+
+.grid{
+
+    position:absolute;
+
+    width:100%;
+
+    height:100%;
+
+    background-image:
+    linear-gradient(rgba(255,255,255,0.04) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255,255,255,0.04) 1px, transparent 1px);
+
+    background-size:40px 40px;
+
+    animation:gridMove 20s linear infinite;
+}
+
+@keyframes gridMove{
+
+    from{
+
+        transform:translateY(0);
+    }
+
+    to{
+
+        transform:translateY(40px);
+    }
+}
+
+/* BUBBLES */
+
+.bubble{
+
+    position:absolute;
+
+    bottom:-150px;
+
+    border-radius:50%;
+
+    background:rgba(56,189,248,0.15);
+
+    animation:rise linear infinite;
+}
+
+@keyframes rise{
+
+    from{
+
+        transform:translateY(0);
+    }
+
+    to{
+
+        transform:translateY(-120vh);
+    }
+}
+
+/* PARTICLES */
+
+.particle{
+
+    position:absolute;
+
+    width:4px;
+
+    height:4px;
+
+    background:#38bdf8;
+
+    border-radius:50%;
+
+    animation:floatParticle 6s linear infinite alternate;
+}
+
+@keyframes floatParticle{
+
+    from{
+
+        transform:translateY(0);
+    }
+
+    to{
+
+        transform:translateY(-40px);
+    }
+}
+
+/* CONTENT */
+
+.home-content{
+
+    position:relative;
+
+    z-index:10;
+
+    text-align:center;
+}
+
+.game-title{
+
+    font-size:90px;
+
+    color:#38bdf8;
+
+    margin-bottom:10px;
+
+    animation:titleFloat 3s ease-in-out infinite;
+}
+
+@keyframes titleFloat{
+
+    0%{
+        transform:translateY(0);
+    }
+
+    50%{
+        transform:translateY(-10px);
+    }
+
+    100%{
+        transform:translateY(0);
+    }
+}
+
+.subtitle{
+
+    font-size:28px;
+
+    color:white;
+
+    margin-bottom:40px;
+}
+
+.start-btn{
+
+    padding:18px 40px;
+
+    border:none;
+
+    border-radius:15px;
+
+    background:#38bdf8;
+
+    color:black;
+
+    font-size:24px;
+
+    font-weight:bold;
+
+    cursor:pointer;
+
+    transition:0.3s;
+}
+
+.start-btn:hover{
+
+    transform:scale(1.08);
+}

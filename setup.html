@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Game Setup</title>
+
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+
+<div class="setup-container">
+
+    <h1>Algorithm Sorting Game</h1>
+
+    <h2>Instructions</h2>
+
+    <p>
+        Select algorithm and game mode
+        to begin the sorting visualization.
+    </p>
+
+    <h2>Algorithm</h2>
+
+    <div class="options">
+
+        <label>
+            <input type="radio"
+                   name="algorithm"
+                   checked>
+            Bubble Sort
+        </label>
+
+        <label>
+            <input type="radio"
+                   name="algorithm">
+            Selection Sort
+        </label>
+
+        <label>
+            <input type="radio"
+                   name="algorithm">
+            Insertion Sort
+        </label>
+
+    </div>
+
+    <h2>Game Mode</h2>
+
+    <div class="options">
+
+        <label>
+            <input type="radio"
+                   name="mode"
+                   checked>
+            Practice
+        </label>
+
+        <label>
+            <input type="radio"
+                   name="mode">
+            Stopwatch
+        </label>
+
+        <label>
+            <input type="radio"
+                   name="mode">
+            Countdown
+        </label>
+
+    </div>
+
+    <button onclick="startGame()"
+            class="start-btn">
+
+        Start Game
+
+    </button>
+
+</div>
+
+<script>
+
+function startGame(){
+
+    window.location.href =
+    "game.html";
+}
+
+</script>
+
+</body>
+</html>

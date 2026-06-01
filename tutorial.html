@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport"
+content="width=device-width, initial-scale=1.0">
+
+<title>Bubble Sort Tutorial</title>
+
+<link rel="stylesheet"
+href="tutorial.css">
+
+</head>
+
+<body>
+
+<!-- LOGOUT BUTTON -->
+
+<button class="logout-btn"
+onclick="logout()">
+
+🚪 Logout
+
+</button>
+
+<div class="tutorial-container">
+
+<h1>
+🫧 Bubble Sort Tutorial
+</h1>
+
+<div class="tutorial-card">
+
+<h2>
+How Bubble Sort Works
+</h2>
+
+<p>
+Bubble Sort compares nearby values.
+</p>
+
+<p>
+If LEFT value is bigger, SWAP.
+</p>
+
+<p>
+Larger values move to the right side.
+</p>
+
+</div>
+
+<!-- EXAMPLE -->
+
+<div class="example-box">
+
+<div class="example-bar active"
+style="height:180px;">
+
+50
+
+</div>
+
+<div class="example-bar active"
+style="height:120px;">
+
+20
+
+</div>
+
+<div class="example-bar"
+style="height:220px;">
+
+80
+
+</div>
+
+<div class="example-bar"
+style="height:90px;">
+
+10
+
+</div>
+
+</div>
+
+<div class="instruction">
+
+50 is bigger than 20,
+so they should swap.
+
+</div>
+
+<!-- BUTTONS -->
+
+<div class="buttons">
+
+<a href="game.html">
+
+<button class="start-btn">
+
+▶ START LEVEL
+
+</button>
+
+</a>
+
+<a href="levels.html">
+
+<button class="back-btn">
+
+⬅ BACK
+
+</button>
+
+</a>
+
+</div>
+
+</div>
+
+<script>
+
+/* LOGIN CHECK */
+
+if(
+!localStorage.getItem(
+"currentUser"
+)
+){
+
+window.location.href =
+"index.html";
+}
+
+/* LOGOUT */
+
+function logout(){
+
+localStorage.removeItem(
+"currentUser"
+);
+
+window.location.href =
+"index.html";
+}
+
+</script>
+
+</body>
+</html>

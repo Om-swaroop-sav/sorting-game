@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Sort Quest</title>
+
+    <link rel="stylesheet" href="home.css">
+
+</head>
+
+<body>
+
+<!-- ANIMATED BACKGROUND -->
+
+<div class="animated-bg">
+
+    <div class="grid"></div>
+
+</div>
+
+<!-- MAIN CONTENT -->
+
+<div class="home-content">
+
+    <h1 class="game-title">
+        🧠 SORT QUEST
+    </h1>
+
+    <!-- WELCOME USER -->
+
+    <h2 id="welcomeUser">
+
+    </h2>
+
+    <p class="subtitle">
+
+        Master Sorting Algorithms
+        Through Fun Challenges
+
+    </p>
+
+    <button
+        class="start-btn"
+        onclick="startGame()">
+
+        ▶ START ADVENTURE
+
+    </button>
+
+</div>
+
+<script>
+
+/* CREATE BUBBLES */
+
+for(let i=0; i<20; i++){
+
+    const bubble =
+    document.createElement("div");
+
+    bubble.classList.add("bubble");
+
+    bubble.style.left =
+    Math.random()*100 + "%";
+
+    bubble.style.width =
+    Math.random()*100 + 40 + "px";
+
+    bubble.style.height =
+    bubble.style.width;
+
+    bubble.style.animationDuration =
+    Math.random()*10 + 8 + "s";
+
+    document.body.appendChild(bubble);
+}
+
+/* CREATE PARTICLES */
+
+for(let i=0; i<40; i++){
+
+    const particle =
+    document.createElement("div");
+
+    particle.classList.add("particle");
+
+    particle.style.left =
+    Math.random()*100 + "%";
+
+    particle.style.top =
+    Math.random()*100 + "%";
+
+    particle.style.animationDuration =
+    Math.random()*4 + 3 + "s";
+
+    document.body.appendChild(particle);
+}
+
+/* LOAD CURRENT USER */
+
+let currentUser =
+localStorage.getItem(
+"currentUser"
+);
+
+/* SHOW WELCOME MESSAGE */
+
+document.getElementById(
+"welcomeUser"
+).innerHTML =
+
+"Welcome, " + currentUser + "!";
+
+/* START GAME */
+
+function startGame(){
+
+    window.location.href =
+    "levels.html";
+}
+
+</script>
+
+</body>
+</html>

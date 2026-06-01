@@ -1,0 +1,149 @@
+body{
+
+margin:0;
+padding:0;
+
+background:#0f172a;
+
+font-family:Arial;
+
+color:white;
+
+text-align:center;
+
+min-height:100vh;
+}
+
+/* LOGOUT */
+
+.logout-btn{
+
+position:absolute;
+
+top:20px;
+right:20px;
+
+padding:12px 22px;
+
+background:#ef4444;
+
+color:white;
+
+border:none;
+
+border-radius:10px;
+
+font-size:16px;
+
+font-weight:bold;
+
+cursor:pointer;
+}
+
+/* MAIN */
+
+.profile-container{
+
+width:90%;
+
+max-width:900px;
+
+margin:auto;
+
+padding:30px 20px;
+}
+
+/* TITLE */
+
+h1{
+
+font-size:42px;
+
+color:#facc15;
+}
+
+/* CARDS */
+
+.profile-card,
+.levels-card,
+.stars-card{
+
+background:#1e293b;
+
+margin-top:25px;
+
+padding:25px;
+
+border-radius:14px;
+
+font-size:22px;
+
+line-height:1.8;
+
+box-shadow:
+0 0 15px rgba(0,0,0,0.3);
+}
+
+/* LEVELS */
+
+#levelsList p{
+
+font-size:22px;
+
+margin:12px 0;
+}
+
+/* STARS */
+
+#totalStars{
+
+font-size:50px;
+}
+
+/* BUTTONS */
+
+.buttons{
+
+margin-top:35px;
+}
+
+button{
+
+padding:16px 30px;
+
+margin:10px;
+
+border:none;
+
+border-radius:10px;
+
+font-size:18px;
+
+font-weight:bold;
+
+cursor:pointer;
+
+transition:0.3s;
+}
+
+button:hover{
+
+transform:scale(1.05);
+}
+
+/* MOBILE */
+
+@media(max-width:768px){
+
+h1{
+
+font-size:30px;
+}
+
+.profile-card,
+.levels-card,
+.stars-card{
+
+font-size:18px;
+}
+}

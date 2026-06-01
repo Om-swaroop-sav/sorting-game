@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport"
+content="width=device-width, initial-scale=1.0">
+
+<title>Quick Sort Challenge</title>
+
+<link rel="stylesheet"
+href="quicksort.css">
+
+</head>
+
+<body>
+
+<!-- BACKGROUND -->
+
+<div class="quick-bg">
+
+<div class="particle"></div>
+<div class="particle"></div>
+<div class="particle"></div>
+<div class="particle"></div>
+<div class="particle"></div>
+<div class="particle"></div>
+<div class="particle"></div>
+<div class="particle"></div>
+
+</div>
+
+<!-- LOGOUT -->
+
+<button
+class="logout-btn"
+onclick="logout()">
+
+🚪 Logout
+
+</button>
+
+<!-- TITLE -->
+
+<h1>
+
+⚡ Quick Sort Challenge
+
+</h1>
+
+<!-- STATS -->
+
+<div class="top-panel">
+
+<div class="card">
+
+<h2 id="accuracy">
+
+Accuracy: 100%
+
+</h2>
+
+</div>
+
+<div class="card">
+
+<h2 id="moves">
+
+Moves: 0
+
+</h2>
+
+</div>
+
+</div>
+
+<!-- CONTROLS -->
+
+<div class="controls">
+
+<label>
+
+Array Size
+
+</label>
+
+<input
+type="number"
+id="arraySize"
+min="4"
+max="15"
+value="8">
+
+<label>
+
+Max Value
+
+</label>
+
+<input
+type="number"
+id="maxValue"
+min="20"
+max="300"
+value="100">
+
+<button
+onclick="generateArray()">
+
+🔄 Generate Array
+
+</button>
+
+</div>
+
+<!-- MESSAGE -->
+
+<div class="message-box">
+
+<h2 id="message">
+
+Choose a Pivot
+
+</h2>
+
+</div>
+
+<!-- GAME AREA -->
+
+<div id="treeContainer">
+
+</div>
+
+<!-- RESULT -->
+
+<div
+id="resultScreen"
+class="result-screen">
+
+<h1>
+
+🏆 Quick Sort Complete
+
+</h1>
+
+<h2 id="finalAccuracy">
+
+Accuracy: 100%
+
+</h2>
+
+<button
+onclick="location.reload()">
+
+🔄 Play Again
+
+</button>
+
+</div>
+
+<!-- SOUNDS -->
+
+<audio id="correctSound">
+
+<source
+src="https://assets.mixkit.co/active_storage/sfx/270/270-preview.mp3"
+type="audio/mpeg">
+
+</audio>
+
+<audio id="wrongSound">
+
+<source
+src="https://assets.mixkit.co/active_storage/sfx/2955/2955-preview.mp3"
+type="audio/mpeg">
+
+</audio>
+
+<audio id="winSound">
+
+<source
+src="https://assets.mixkit.co/active_storage/sfx/2019/2019-preview.mp3"
+type="audio/mpeg">
+
+</audio>
+
+<script src="quicksort.js"></script>
+
+</body>
+</html>

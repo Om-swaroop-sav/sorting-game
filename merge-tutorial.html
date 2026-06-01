@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport"
+content="width=device-width, initial-scale=1.0">
+
+<title>Merge Sort Tutorial</title>
+
+<link rel="stylesheet"
+href="merge-tutorial.css">
+
+</head>
+
+<body>
+
+<!-- LOGIN CHECK -->
+
+<script>
+
+if(
+!localStorage.getItem(
+"currentUser"
+)
+){
+
+window.location.href =
+"index.html";
+}
+
+</script>
+
+<!-- LOGOUT -->
+
+<button class="logout-btn"
+onclick="logout()">
+
+🚪 Logout
+
+</button>
+
+<!-- BACKGROUND -->
+
+<div class="merge-bg">
+
+<div class="branches"></div>
+
+</div>
+
+<!-- MAIN -->
+
+<div class="tutorial-container">
+
+<h1>
+🌳 Merge Sort Tutorial
+</h1>
+
+<div class="tutorial-card">
+
+<h2>
+How Merge Sort Works
+</h2>
+
+<p>
+
+Merge Sort uses:
+<b>Divide & Conquer</b>
+
+</p>
+
+<p>
+
+✅ Split arrays into halves
+
+</p>
+
+<p>
+
+✅ Sort smaller parts
+
+</p>
+
+<p>
+
+✅ Merge them correctly
+
+</p>
+
+</div>
+
+<!-- SPLIT -->
+
+<div class="merge-section">
+
+<h2>
+Step 1 — Split
+</h2>
+
+<div class="array-row">
+
+<div class="merge-box">
+50
+</div>
+
+<div class="merge-box">
+20
+</div>
+
+<div class="merge-box">
+80
+</div>
+
+<div class="merge-box">
+10
+</div>
+
+</div>
+
+<p class="explanation">
+
+Split into two halves
+
+</p>
+
+<div class="array-row">
+
+<div class="merge-box active">
+50
+</div>
+
+<div class="merge-box active">
+20
+</div>
+
+<span class="divider">
+
+|
+
+</span>
+
+<div class="merge-box active">
+80
+</div>
+
+<div class="merge-box active">
+10
+</div>
+
+</div>
+
+</div>
+
+<!-- MERGE -->
+
+<div class="merge-section">
+
+<h2>
+Step 2 — Merge
+</h2>
+
+<div class="array-row">
+
+<div class="merge-box correct">
+20
+</div>
+
+<div class="merge-box correct">
+50
+</div>
+
+<div class="merge-box correct">
+10
+</div>
+
+<div class="merge-box correct">
+80
+</div>
+
+</div>
+
+<p class="explanation">
+
+Merge smaller sorted arrays
+
+</p>
+
+</div>
+
+<!-- FINAL -->
+
+<div class="merge-section">
+
+<h2>
+Final Sorted Array
+</h2>
+
+<div class="array-row">
+
+<div class="merge-box final">
+10
+</div>
+
+<div class="merge-box final">
+20
+</div>
+
+<div class="merge-box final">
+50
+</div>
+
+<div class="merge-box final">
+80
+</div>
+
+</div>
+
+</div>
+
+<!-- RULES -->
+
+<div class="rules">
+
+<h2>
+🎮 Gameplay Rules
+</h2>
+
+<p>
+
+✅ Select smaller values first
+<br><br>
+
+✅ Merge arrays correctly
+<br><br>
+
+🏆 Get 100% to unlock Quick Sort
+
+</p>
+
+</div>
+
+<!-- BUTTONS -->
+
+<div class="buttons">
+
+<a href="merge.html">
+
+<button class="start-btn">
+
+▶ START LEVEL
+
+</button>
+
+</a>
+
+<a href="levels.html">
+
+<button class="back-btn">
+
+⬅ BACK
+
+</button>
+
+</a>
+
+</div>
+
+</div>
+
+<script>
+
+function logout(){
+
+localStorage.removeItem(
+"currentUser"
+);
+
+window.location.href =
+"index.html";
+}
+
+</script>
+
+</body>
+</html>

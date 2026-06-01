@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport"
+content="width=device-width, initial-scale=1.0">
+
+<title>Insertion Sort Game</title>
+
+<link rel="stylesheet"
+href="insertion.css">
+
+</head>
+
+<body>
+<div class="cube-bg">
+
+<div class="cube"></div>
+<div class="cube"></div>
+<div class="cube"></div>
+<div class="cube"></div>
+<div class="cube"></div>
+<div class="cube"></div>
+<div class="cube"></div>
+<div class="cube"></div>
+
+</div>
+
+</div>
+    <div class="grid-bg">
+
+<div class="grid-lines"></div>
+
+</div>
+
+<!-- LOGOUT -->
+
+<button class="logout-btn"
+onclick="logout()">
+
+🚪 Logout
+
+</button>
+
+<!-- BACKGROUND -->
+
+<div class="insertion-bg">
+
+<div class="glow"></div>
+
+</div>
+
+<h1>
+🟪 Insertion Sort Challenge
+</h1>
+
+<!-- TOP PANEL -->
+
+<div class="top-panel">
+
+<div class="card">
+
+<h2>
+🎯 Goal
+</h2>
+
+<p>
+Insert value in correct position
+</p>
+
+</div>
+
+<div class="card">
+
+<h2 id="moves">
+Moves: 0
+</h2>
+
+</div>
+
+<div class="card">
+
+<h2 id="accuracy">
+Accuracy: 100%
+</h2>
+
+</div>
+
+</div>
+
+<!-- MESSAGE -->
+
+<div id="message"
+class="message-box">
+
+🟪 Find correct insertion position.
+
+</div>
+
+<!-- POINTERS -->
+
+<div class="pointer-info">
+
+<span id="keyPointer">
+
+key = 0
+
+</span>
+
+</div>
+
+<!-- ARRAY -->
+<!-- CONTROLS -->
+
+<div class="controls">
+
+<label>
+
+Array Size
+
+</label>
+
+<input type="number"
+id="arraySize"
+min="4"
+max="15"
+value="8">
+
+<label>
+
+Max Value
+
+</label>
+
+<input type="number"
+id="maxValue"
+min="20"
+max="300"
+value="100">
+
+<button onclick="generateArray()">
+
+🔄 Generate
+
+</button>
+
+</div>
+<div id="array-container">
+
+</div>
+
+<!-- BUTTONS -->
+
+<div class="buttons">
+
+
+
+</div>
+
+<!-- SOUNDS -->
+
+<audio id="correctSound">
+
+<source
+src="https://assets.mixkit.co/active_storage/sfx/270/270-preview.mp3"
+type="audio/mpeg">
+
+</audio>
+
+<audio id="wrongSound">
+
+<source
+src="https://assets.mixkit.co/active_storage/sfx/2955/2955-preview.mp3"
+type="audio/mpeg">
+
+</audio>
+
+<script src="insertion.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport"
+content="width=device-width, initial-scale=1.0">
+
+<title>Player Profile</title>
+
+<link rel="stylesheet"
+href="profile.css">
+
+</head>
+
+<body>
+
+<!-- LOGIN CHECK -->
+
+<script>
+
+if(
+!localStorage.getItem(
+"currentUser"
+)
+){
+
+window.location.href =
+"index.html";
+}
+
+</script>
+
+<!-- LOGOUT -->
+
+<button class="logout-btn"
+onclick="logout()">
+
+🚪 Logout
+
+</button>
+
+<!-- MAIN -->
+
+<div class="profile-container">
+
+<h1>
+👤 Player Profile
+</h1>
+
+<!-- PLAYER CARD -->
+
+<div class="profile-card">
+
+<h2 id="playerName">
+
+Player
+
+</h2>
+
+<p id="currentLevel">
+
+Current Level:
+Bubble Sort
+
+</p>
+
+<p id="bestAccuracy">
+
+Best Accuracy:
+0%
+
+</p>
+
+<p id="progressText">
+
+Progress:
+0 / 5
+
+</p>
+
+</div>
+
+<!-- UNLOCKED LEVELS -->
+
+<div class="levels-card">
+
+<h2>
+🎮 Unlocked Levels
+</h2>
+
+<div id="levelsList">
+
+</div>
+
+</div>
+
+<!-- STARS -->
+
+<div class="stars-card">
+
+<h2>
+⭐ Total Stars
+</h2>
+
+<h1 id="totalStars">
+
+⭐
+
+</h1>
+
+</div>
+
+<!-- BUTTONS -->
+
+<div class="buttons">
+
+<button onclick="goLevels()">
+
+🎮 Levels
+
+</button>
+
+<button onclick="resetProgress()">
+
+🗑 Reset Progress
+
+</button>
+
+</div>
+
+</div>
+
+<script>
+
+/* CURRENT USER */
+
+let currentUser =
+localStorage.getItem(
+"currentUser"
+);
+
+/* USERS */
+
+let users =
+JSON.parse(
+localStorage.getItem(
+"users"
+));
+
+/* PLAYER */
+
+let player =
+users[currentUser];
+
+/* PLAYER NAME */
+
+document.getElementById(
+"playerName"
+).innerHTML =
+
+"👤 " + currentUser;
+
+/* CURRENT LEVEL */
+
+document.getElementById(
+"currentLevel"
+).innerHTML =
+
+"Current Level: " +
+player.currentLevel;
+
+/* BEST ACCURACY */
+
+document.getElementById(
+"bestAccuracy"
+).innerHTML =
+
+"Best Accuracy: " +
+player.bestAccuracy + "%";
+
+/* PROGRESS */
+
+let completed =
+player.unlockedLevels.length;
+
+document.getElementById(
+"progressText"
+).innerHTML =
+
+"Progress: " +
+completed +
+" / 5 Completed";
+
+/* LEVELS */
+
+let levelsHTML = "";
+
+let allLevels = [
+
+"Bubble Sort",
+"Selection Sort",
+"Insertion Sort",
+"Merge Sort",
+"Quick Sort"
+
+];
+
+for(let level of allLevels){
+
+if(
+player.unlockedLevels.includes(
+level
+)
+){
+
+levelsHTML +=
+
+"<p>✅ " +
+level +
+"</p>";
+}
+
+else{
+
+levelsHTML +=
+
+"<p>🔒 " +
+level +
+"</p>";
+}
+}
+
+document.getElementById(
+"levelsList"
+).innerHTML = levelsHTML;
+
+/* STARS */
+
+let stars = "";
+
+for(let i=0; i<completed; i++){
+
+stars += "⭐";
+}
+
+document.getElementById(
+"totalStars"
+).innerHTML = stars;
+
+/* GO LEVELS */
+
+function goLevels(){
+
+window.location.href =
+"levels.html";
+}
+
+/* RESET */
+
+function resetProgress(){
+
+if(
+confirm(
+"Reset all progress?"
+)
+){
+
+users[currentUser] = {
+
+currentLevel:
+"Bubble Sort",
+
+unlockedLevels: [
+"Bubble Sort"
+],
+
+bestAccuracy: 0
+};
+
+localStorage.setItem(
+"users",
+JSON.stringify(users)
+);
+
+location.reload();
+}
+}
+
+/* LOGOUT */
+
+function logout(){
+
+localStorage.removeItem(
+"currentUser"
+);
+
+window.location.href =
+"index.html";
+}
+
+</script>
+
+</body>
+</html>

@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport"
+content="width=device-width, initial-scale=1.0">
+
+<title>Select Algorithm</title>
+
+<link rel="stylesheet"
+href="levels.css">
+
+</head>
+
+<body>
+
+<!-- LOGIN CHECK -->
+
+<script>
+
+if(
+!localStorage.getItem(
+"currentUser"
+)
+){
+
+window.location.href =
+"index.html";
+}
+
+</script>
+
+<!-- BACKGROUND -->
+
+<div class="background"></div>
+
+<!-- PROFILE -->
+
+<button class="profile-btn"
+onclick="openProfile()">
+
+👤 Profile
+
+</button>
+
+<!-- LOGOUT -->
+
+<button class="logout-btn"
+onclick="logout()">
+
+🚪 Logout
+
+</button>
+
+<!-- TITLE -->
+
+<h1 class="title">
+
+🎮 Choose Your Algorithm
+
+</h1>
+
+<!-- LEVELS -->
+
+<div class="levels-container">
+
+<!-- BUBBLE -->
+
+<div class="level-card unlocked"
+onclick="openBubbleSort()">
+
+<h2>
+
+🫧 Bubble Sort
+
+</h2>
+
+<p>
+
+Learn swapping nearby values
+
+</p>
+
+</div>
+
+<!-- SELECTION -->
+
+<div id="selectionCard"
+class="level-card locked">
+
+<h2 id="selectionTitle">
+
+🔒 Selection Sort
+
+</h2>
+
+<p id="selectionText">
+
+Unlock with 100% accuracy
+
+</p>
+
+</div>
+
+<!-- INSERTION -->
+
+<div id="insertionCard"
+class="level-card locked">
+
+<h2 id="insertionTitle">
+
+🔒 Insertion Sort
+
+</h2>
+
+<p id="insertionText">
+
+Complete Selection Sort first
+
+</p>
+
+</div>
+
+<!-- MERGE -->
+
+<div id="mergeCard"
+class="level-card locked">
+
+<h2 id="mergeTitle">
+
+🔒 Merge Sort
+
+</h2>
+
+<p id="mergeText">
+
+Complete Insertion Sort first
+
+</p>
+
+</div>
+
+<!-- QUICK -->
+
+<div id="quickCard"
+class="level-card locked">
+
+<h2 id="quickTitle">
+
+🔒 Quick Sort
+
+</h2>
+
+<p id="quickText">
+
+Complete Merge Sort first
+
+</p>
+
+</div>
+
+</div>
+
+<script>
+
+/* CURRENT USER */
+
+let currentUser =
+localStorage.getItem(
+"currentUser"
+);
+
+/* USERS */
+
+let users =
+JSON.parse(
+localStorage.getItem(
+"users"
+));
+
+/* PLAYER */
+
+let player =
+users[currentUser];
+
+/* SAFETY */
+
+if(!player.unlockedLevels){
+
+player.unlockedLevels = [
+"Bubble Sort"
+];
+}
+
+/* PROFILE */
+
+function openProfile(){
+
+window.location.href =
+"profile.html";
+}
+
+/* LOGOUT */
+
+function logout(){
+
+localStorage.removeItem(
+"currentUser"
+);
+
+window.location.href =
+"index.html";
+}
+
+/* BUBBLE */
+
+function openBubbleSort(){
+
+window.location.href =
+"tutorial.html";
+}
+
+/* ---------- SELECTION ---------- */
+
+if(
+player.unlockedLevels.includes(
+"Selection Sort"
+)
+){
+
+let card =
+document.getElementById(
+"selectionCard"
+);
+
+card.classList.remove(
+"locked"
+);
+
+card.classList.add(
+"unlocked"
+);
+
+document.getElementById(
+"selectionTitle"
+).innerHTML =
+
+"🔍 Selection Sort";
+
+document.getElementById(
+"selectionText"
+).innerHTML =
+
+"Find the minimum value";
+
+card.onclick = function(){
+
+window.location.href =
+"selection-tutorial.html";
+};
+}
+
+/* ---------- INSERTION ---------- */
+
+if(
+player.unlockedLevels.includes(
+"Insertion Sort"
+)
+){
+
+let card =
+document.getElementById(
+"insertionCard"
+);
+
+card.classList.remove(
+"locked"
+);
+
+card.classList.add(
+"unlocked"
+);
+
+document.getElementById(
+"insertionTitle"
+).innerHTML =
+
+"🟪 Insertion Sort";
+
+document.getElementById(
+"insertionText"
+).innerHTML =
+
+"Insert values correctly";
+
+card.onclick = function(){
+
+window.location.href =
+"insertion-tutorial.html";
+};
+}
+
+/* ---------- MERGE ---------- */
+
+if(
+player.unlockedLevels.includes(
+"Merge Sort"
+)
+){
+
+let card =
+document.getElementById(
+"mergeCard"
+);
+
+card.classList.remove(
+"locked"
+);
+
+card.classList.add(
+"unlocked"
+);
+
+document.getElementById(
+"mergeTitle"
+).innerHTML =
+
+"🌳 Merge Sort";
+
+document.getElementById(
+"mergeText"
+).innerHTML =
+
+"Divide and conquer";
+
+card.onclick = function(){
+
+window.location.href =
+"merge-tutorial.html";
+};
+}
+
+/* ---------- QUICK ---------- */
+
+if(
+player.unlockedLevels.includes(
+"Quick Sort"
+)
+){
+
+let card =
+document.getElementById(
+"quickCard"
+);
+
+card.classList.remove(
+"locked"
+);
+
+card.classList.add(
+"unlocked"
+);
+
+document.getElementById(
+"quickTitle"
+).innerHTML =
+
+"⚡ Quick Sort";
+
+document.getElementById(
+"quickText"
+).innerHTML =
+
+"Master pivot partitioning";
+
+card.onclick = function(){
+window.location.href =
+"quicksort.html";
+};
+}
+</script>
+
+</body>
+</html>
